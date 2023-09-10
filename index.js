@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 const corsOptions = {
-    origin: 'https://joaquin-sanchez-tonani-ecommerce.netlify.app/userValidation',
+    origin: 'https://joaquin-sanchez-tonani-ecommerce.netlify.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
@@ -40,7 +40,9 @@ const userEmailValidationFromDataBase = async (data,r,res,connection) =>{
         `INSERT INTO user(username,password,email,admin)Values("${r.user}","${r.password}","${r.email}",0)`)
     return res.json({ isAvailable: true})
 }
-
+app.get('/', (req,res) =>{
+    res.send('dale')
+})
 app.post('/apiForValidation', async (req,res) =>{
     const connection = mysql.createConnection(db);
     try{
@@ -77,7 +79,6 @@ app.post('/apiForValidation', async (req,res) =>{
     }
 })
 
-app.listen(3000, () =>{
-    console.log('server on port 3000')
+app.listen(3500, () =>{
+    console.log('server on port 3500')
 })
-
