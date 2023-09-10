@@ -78,6 +78,6 @@ app.post('/apiForValidation', async (req,res) =>{
     }
 })
 
-app.listen(443,SECRET_IP_PRIVATE, () => {
-    console.log('Server on port 3000')
+app.listen(443, () => {
+    console.log('Server on port 443')
 })
