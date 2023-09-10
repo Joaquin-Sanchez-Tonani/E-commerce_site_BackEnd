@@ -80,5 +80,8 @@ app.post('/apiForValidation', async (req,res) =>{
         console.log(err);
         res.status(500).json({error: 'Error al consultar a la base de datos.'})
     }
+    app.listen(3000, (res,req) =>{
+        res.send('Server on port 3000, god.')
+    })
 })
 
