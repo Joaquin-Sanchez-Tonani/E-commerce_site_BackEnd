@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'https://joaquin-sanchez-tonani-ecommerce.netlify.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
@@ -78,6 +78,6 @@ app.post('/apiForValidation', async (req,res) =>{
     }
 })
 
-app.listen(3000, () => {
+app.listen(443, () => {
     console.log('Server on port 3000')
 })
