@@ -3,6 +3,7 @@ const cors = require('cors')
 const mysql = require('mysql')
 const express = require('express');
 const app = express();
+const http = require('http')
 
 const corsOptions = {
     origin: 'https://joaquin-sanchez-tonani-ecommerce.netlify.app/',
@@ -12,6 +13,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+const serverHttp = http.createServer(app);
+serverHttp.listen(process.env.HTTP_PORT, process.env.IP);
+serverHttp.on('listening', () => console.info(`Notes App running at http://${process.env.IP}:${process.env.HTTP_PORT}`));
 
 const db = {
     host: process.env.SECRET_HOST,
