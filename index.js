@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 const corsOptions = {
-    origin: 'https://joaquin-sanchez-tonani-ecommerce.netlify.app/',
+    origin: 'https://joaquin-sanchez-tonani-ecommerce.netlify.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
